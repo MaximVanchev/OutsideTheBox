@@ -258,18 +258,16 @@ export default function Home() {
           <div className="space-y-12">
             {/* Host 1: Alex */}
             <div>
-              <div className="mb-4 flex items-center gap-4">
-                <div className="relative h-24 w-24">
-                  <div className="absolute inset-0 rounded-full bg-[#663399] p-1">
-                    <div className="h-full w-full rounded-full bg-[#32cd32] p-2">
-                      <div className="h-full w-full rounded-full bg-gray-800" />
-                    </div>
-                  </div>
+              {/* Centered photo with purple bar stretching from photo to screen end */}
+              <div className="mb-6 relative w-full flex justify-center">
+                <div className="relative h-48 w-48 z-10">
+                  <Image src="/Alex.png" alt="Alex" fill className="object-cover" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[#9a23df]">Alex - Returning to the Self</h3>
-                </div>
+                <div className="absolute top-0.5 left-1/2 right-0 h-47 bg-[#9a23df]"></div>
               </div>
+              <h3 className="text-xl font-bold text-[#9a23df] text-center pb-6">
+                Alex - Returning to the Self
+              </h3>
               <p className="text-center max-w-2xl mx-auto  leading-relaxed">
                 After building and selling his advertising agency to one of the world&apos;s largest
                 global marketing groups, Alex shifted his focus from scaling brands to helping
@@ -285,19 +283,14 @@ export default function Home() {
 
             {/* Host 2: Yonko */}
             <div>
-              <div className="mb-4 flex items-center gap-4">
-                <div className="relative h-24 w-24">
-                  <div className="absolute inset-0 rounded-full bg-[#663399] p-1">
-                    <div className="h-full w-full rounded-full bg-[#32cd32] p-2">
-                      <div className="h-full w-full rounded-full bg-gray-800" />
-                    </div>
-                  </div>
+              <div className="mb-6 relative w-full flex justify-center">
+                <div className="relative h-48 w-48 z-10">
+                  <Image src="/Yonko.png" alt="Yonko" fill className="object-cover" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[#9075ff]">
-                    Yonko - The Architecture of Reality
-                  </h3>
-                </div>
+                <div className="absolute top-0.5 right-1/2 left-0 h-47 bg-[#9a23df]"></div>
+              </div>
+              <div className="text-xl text-center font-bold text-[#9075ff] pb-6">
+                Yonko - The Architecture of Reality
               </div>
               <p className="text-center max-w-2xl mx-auto leading-relaxed">
                 After years of performing on screen and stage, creating festivals, and bringing
