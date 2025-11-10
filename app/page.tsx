@@ -66,10 +66,10 @@ export default function Home() {
           {/* Background Image Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/OutsideTheBox_Mobile.jpeg"
+              src="/iStock-2165740998.jpg"
               alt="Outside The Box Event"
               fill
-              className="object-cover opacity-80"
+              className="object-cover opacity-80 object-left sm:object-center"
               priority
             />
             <div className="absolute inset-0 bg-[#1a1a1a]/60" />
@@ -117,7 +117,7 @@ export default function Home() {
         </section>
 
         {/* What You'll Experience Section */}
-        <section id="experience" className="bg-gray-100 pt-16 text-[#1a1a1a] scroll-mt-20">
+        <section id="experience" className="bg-gray-100 pt-8 text-[#1a1a1a] scroll-mt-20">
           <h2 className="mb-6 text-3xl px-6 font-bold text-center">
             What You<span className="bg-[#d7df23] px-1 text-black rounded-lg">&apos;ll E</span>
             xperience
@@ -325,7 +325,7 @@ export default function Home() {
               <div className="font-semibold">Toplocentrala</div>
             </div>
             <div className="rounded bg-white p-4 text-[#1a1a1a]">
-              <CalendarIcon className="mb-2 h-8 w-8" />.
+              <CalendarIcon className="mb-2 h-8 w-8" />
               <div className="font-semibold text-2xl">7.12.25</div>
             </div>
             <div className="rounded bg-black p-4 text-[#d7df23]">
