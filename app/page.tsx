@@ -1,28 +1,23 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useState } from "react";
-import {
-  MapPinIcon,
-  CalendarIcon,
-  ClockIcon,
-  TagIcon,
-} from "@heroicons/react/24/outline";
-import { Sidebar } from "./components/sidebar";
+import Image from 'next/image';
+import { useState } from 'react';
+import { MapPinIcon, CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline';
+import { Sidebar } from './components/sidebar';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"en" | "bg">("en");
+  const [language, setLanguage] = useState<'en' | 'bg'>('en');
 
   function toggleLanguage() {
-    setLanguage((prev) => (prev === "en" ? "bg" : "en"));
+    setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
   }
 
   return (
     <div className="relative min-h-screen bg-[#1a1a1a] text-white">
       {/* Sidebar - Always visible on desktop, toggleable on mobile */}
-      <Sidebar 
-        isOpen={isMobileMenuOpen} 
+      <Sidebar
+        isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         language={language}
         onToggleLanguage={toggleLanguage}
@@ -32,7 +27,7 @@ export default function Home() {
         {/* Header - Sticky across entire page - Mobile only */}
         <header
           className={`lg:hidden sticky top-0 z-50 flex items-center bg-[#1a1a1a] text-white justify-between px-6 py-6 transition-transform duration-300 ${
-            isMobileMenuOpen ? "-translate-y-full" : "translate-y-0"
+            isMobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
           }`}
         >
           <div className="flex flex-col lg:hidden">
@@ -44,9 +39,9 @@ export default function Home() {
             <button
               onClick={toggleLanguage}
               className="rounded-md border border-white/20 bg-white/10 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"
-              aria-label={`Switch to ${language === "en" ? "Bulgarian" : "English"}`}
+              aria-label={`Switch to ${language === 'en' ? 'Bulgarian' : 'English'}`}
             >
-              {language === "en" ? "BG" : "EN"}
+              {language === 'en' ? 'BG' : 'EN'}
             </button>
             {/* Mobile Menu Button */}
             <button
@@ -54,12 +49,7 @@ export default function Home() {
               className="text-white lg:hidden z-50"
               aria-label="Open menu"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -96,9 +86,7 @@ export default function Home() {
               <br />
               YOUR REALITY.
             </h1>
-            <p className="mb-8 text-lg sm:text-xl">
-              SATURDAY 12.12.25 @ TOPLO CENTRALA
-            </p>
+            <p className="mb-8 text-lg sm:text-xl">SATURDAY 12.12.25 @ TOPLO CENTRALA</p>
             <a
               href="#registration"
               className="rounded-lg bg-[#d7df23] px-8 py-4 font-bold text-black transition-colors hover:bg-[#28a028]"
@@ -109,46 +97,39 @@ export default function Home() {
         </section>
 
         {/* About The Event Section */}
-        <section
-          id="about"
-          className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20"
-        >
+        <section id="about" className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20">
           <h2 className="mb-6 text-3xl font-bold text-center">
             About <span className="bg-[#40e0d0] rounded-lg px-1">The</span> Event
           </h2>
           <div className="text-lg leading-relaxed text-center">
+            <p>Feeling stuck in the same loops?</p>
+            <p>Ready for real, lasting change?</p>
             <p>
-            Feeling stuck in the same loops?
+              Join Alex & Yonko for a transformative one-day experience that blends deep inner
+              healing with practical neuroscience - helping you break free from recurring patterns
+              and create the life you truly want.
             </p>
-          <p>
-          Ready for real, lasting change?
-          </p>
-          <p>
-          Join Alex & Yonko for a transformative one-day experience that blends deep inner healing with practical neuroscience - helping you break free from recurring patterns and create the life you truly want.
-          </p>
-<p>
-This isn&apos;t theory. It&apos;s real work - guided processes, emotional release, and the science of how to rewire your brain for freedom, clarity, and self-leadership.
-</p>
-
+            <p>
+              This isn&apos;t theory. It&apos;s real work - guided processes, emotional release, and
+              the science of how to rewire your brain for freedom, clarity, and self-leadership.
+            </p>
           </div>
         </section>
 
         {/* What You'll Experience Section */}
-        <section
-          id="experience"
-          className="bg-gray-100 pt-16 text-[#1a1a1a] scroll-mt-20"
-        >
+        <section id="experience" className="bg-gray-100 pt-16 text-[#1a1a1a] scroll-mt-20">
           <h2 className="mb-6 text-3xl px-6 font-bold text-center">
-            What You<span className="bg-[#d7df23] px-1 text-black rounded-lg">&apos;ll E</span>xperience
+            What You<span className="bg-[#d7df23] px-1 text-black rounded-lg">&apos;ll E</span>
+            xperience
           </h2>
           <div className="mb-8 text-center px-6 text-lg leading-relaxed">
             <div>
-            This event bridges heart and science - the emotional depth of healing with the practical tools to make change stick.
-
+              This event bridges heart and science - the emotional depth of healing with the
+              practical tools to make change stick.
             </div>
             <div>
-            It&apos;s for those ready to stop repeating the past and start consciously creating their future.
-
+              It&apos;s for those ready to stop repeating the past and start consciously creating
+              their future.
             </div>
           </div>
           <div className="text-center">
@@ -158,15 +139,13 @@ This isn&apos;t theory. It&apos;s real work - guided processes, emotional releas
                 Shadow Work & Inner Child Healing
               </h3>
               <p className="text-black text-xl">
-              Uncover the unconscious patterns that run your life and reshape them with awareness
+                Uncover the unconscious patterns that run your life and reshape them with awareness
               </p>
             </div>
 
             {/* Experience Block 2 */}
             <div className=" bg-[#24938a] p-6">
-              <h3 className="mb-2 text-2xl font-bold text-black">
-                Break Approval Addiction
-              </h3>
+              <h3 className="mb-2 text-2xl font-bold text-black">Break Approval Addiction</h3>
               <p className="text-black text-xl">
                 Stop living for others and start standing fully in your truth
               </p>
@@ -174,9 +153,7 @@ This isn&apos;t theory. It&apos;s real work - guided processes, emotional releas
 
             {/* Experience Block 3 */}
             <div className="bg-[#9075ff] p-6">
-              <h3 className="mb-2 text-2xl font-bold text-black">
-                Rewire Your Brain
-              </h3>
+              <h3 className="mb-2 text-2xl font-bold text-black">Rewire Your Brain</h3>
               <p className="text-black text-xl">
                 Use neuroplasticity to consciously reshape your thoughts, emotions, and behaviors
               </p>
@@ -184,94 +161,87 @@ This isn&apos;t theory. It&apos;s real work - guided processes, emotional releas
 
             {/* Experience Block 4 */}
             <div className="bg-[#ff75d0] p-6">
-              <h3 className="mb-2 text-2xl font-bold text-black">
-                Master the Present Moment
-              </h3>
-              <p className="text-black text-xl">
-                Access the only point of real power: now
-              </p>
+              <h3 className="mb-2 text-2xl font-bold text-black">Master the Present Moment</h3>
+              <p className="text-black text-xl">Access the only point of real power: now</p>
             </div>
 
             {/* Experience Block 5 */}
             <div className="bg-[#9a23df] p-6">
-              <h3 className="mb-2 text-2xl font-bold text-black">
-                Two Guided Meditations
-              </h3>
+              <h3 className="mb-2 text-2xl font-bold text-black">Two Guided Meditations</h3>
               <p className="text-black text-xl">
-                Reprogram your nervous system for safety, success, and expansion
-                (30 min + 45 min)
+                Reprogram your nervous system for safety, success, and expansion (30 min + 45 min)
               </p>
             </div>
           </div>
         </section>
 
         {/* Schedule Section */}
-        <section
-          id="schedule"
-          className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20"
-        >
+        <section id="schedule" className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20">
           <h2 className="mb-8 text-3xl font-bold text-center">
             Sch<span className="bg-[#d7df23] rounded-lg px-0.5">ed</span>ule
           </h2>
           <div className="text-black">
             <div className="bg-[#d7df23] p-3">
-              <span className="font-bold">10:00 - 10:20 | Arrival & Intention</span> 
+              <span className="font-bold">10:00 - 10:20 | Arrival & Intention</span>
               <div>Welcome, grounding, setting the tone for the day.</div>
-              
             </div>
             <div className="bg-white p-3">
-              <span className="font-bold ">10:20 - 11:20 | Part 1: Returning to the self (Alex)</span> 
-              <div>• Shadow & Inner Child: what you&apos;ve suppressed, and how it still runs you</div>
+              <span className="font-bold ">
+                10:20 - 11:20 | Part 1: Returning to the self (Alex)
+              </span>
+              <div>
+                • Shadow & Inner Child: what you&apos;ve suppressed, and how it still runs you
+              </div>
               <div>• Approval Addiction: stop living for validation</div>
               <div>• Coming Back to You: emotional honesty, alignment with your real self</div>
             </div>
             <div className="bg-black text-white p-3">
-              <span className="font-bold">11:20 - 11:30 | Break</span> 
+              <span className="font-bold">11:20 - 11:30 | Break</span>
             </div>
             <div className="bg-[#d7df23] p-3">
-              <span className="font-bold">11:30 - 12:20 | Part 2: The
-              architecture of your reality (Yonko)</span> 
-              <div>How your thoughts, emotions, habits, and
-              environment create the loop you&apos;re stuck in.</div>
+              <span className="font-bold">
+                11:30 - 12:20 | Part 2: The architecture of your reality (Yonko)
+              </span>
+              <div>
+                How your thoughts, emotions, habits, and environment create the loop you&apos;re
+                stuck in.
+              </div>
             </div>
             <div className="bg-white p-3">
-              <span className="font-bold">12:20 - 12:50 | Break +
-              Connection</span> 
+              <span className="font-bold">12:20 - 12:50 | Break + Connection</span>
               <div>Light refreshments, sharing, informal Q&A.</div>
             </div>
             <div className="bg-black text-white p-3">
-              <span className="font-bold">12:50 - 13:40 | Breaking the
-              Patterns (Yonko)</span> 
-              <div>Why we repeat the past, how beliefs form, and
-              how to step out of the familiar version of you.</div>
+              <span className="font-bold">12:50 - 13:40 | Breaking the Patterns (Yonko)</span>
+              <div>
+                Why we repeat the past, how beliefs form, and how to step out of the familiar
+                version of you.
+              </div>
             </div>
             <div className="bg-[#d7df23] p-3">
-              <span className="font-bold">13:40 - 13:45 | Short Break</span> 
+              <span className="font-bold">13:40 - 13:45 | Short Break</span>
             </div>
             <div className="bg-white p-3">
-              <span className="font-bold">13:45 - 14:15 | Meditation 1:
-              The Present Moment</span>
-              <div>Guided practice to access the only place real
-              change can happen: now.</div>
+              <span className="font-bold">13:45 - 14:15 | Meditation 1: The Present Moment</span>
+              <div>Guided practice to access the only place real change can happen: now.</div>
             </div>
             <div className="bg-black text-white p-3">
               <span className="font-bold">14:15 - 14:20 | Integration</span>
               <div>Silent reflection + journaling.</div>
             </div>
             <div className="bg-[#d7df23] p-3">
-              <span className="font-bold">14:20 - 15:05 | Becoming Your
-              New Self</span>
-              <div>Tools for catching old patterns in real time, choosing differently, and rehearsing your new identity. </div>
+              <span className="font-bold">14:20 - 15:05 | Becoming Your New Self</span>
+              <div>
+                Tools for catching old patterns in real time, choosing differently, and rehearsing
+                your new identity.{' '}
+              </div>
             </div>
             <div className="bg-white p-3">
-              <span className="font-bold">15:05 - 15:10 | Prepare for
-              Deep Work</span>
+              <span className="font-bold">15:05 - 15:10 | Prepare for Deep Work</span>
             </div>
             <div className="bg-black text-white p-3">
-              <span className="font-bold">15:10 - 15:55 | MEDITATION 2:
-              Creating Your Reality</span>
-              <div>Release the old identity, embody the new one,
-              lock in the elevated state.</div>
+              <span className="font-bold">15:10 - 15:55 | MEDITATION 2: Creating Your Reality</span>
+              <div>Release the old identity, embody the new one, lock in the elevated state.</div>
             </div>
             <div className="bg-[#d7df23] p-3">
               <span className="font-bold">15:55 - 16:00 | Closing</span>
@@ -281,10 +251,7 @@ This isn&apos;t theory. It&apos;s real work - guided processes, emotional releas
         </section>
 
         {/* Your Hosts Section */}
-        <section
-          id="hosts"
-          className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20"
-        >
+        <section id="hosts" className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20">
           <h2 className="mb-8 text-3xl font-bold text-center">
             You<span className="bg-[#9075ff] rounded-lg px-0.5 text-white">r H</span>osts
           </h2>
@@ -300,18 +267,19 @@ This isn&apos;t theory. It&apos;s real work - guided processes, emotional releas
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#9a23df]">
-                    Alex - Returning to the Self
-                  </h3>
+                  <h3 className="text-xl font-bold text-[#9a23df]">Alex - Returning to the Self</h3>
                 </div>
               </div>
               <p className="text-center max-w-2xl mx-auto  leading-relaxed">
-              After building and selling his advertising
-agency to one of the world&apos;s largest global marketing groups, Alex shifted his focus from scaling brands to helping people expand from within.
-    </p>
+                After building and selling his advertising agency to one of the world&apos;s largest
+                global marketing groups, Alex shifted his focus from scaling brands to helping
+                people expand from within.
+              </p>
               <p className="text-center max-w-2xl mx-auto  leading-relaxed mt-5">
-              With over 13 years of experience in strategy and human behavior, his work now bridges deep inner transformation with practical tools for real-life change. Alex guides others to break free from old patterns, reconnect with their authentic selves, and live in alignment with purpose, presence, and truth.
-          
+                With over 13 years of experience in strategy and human behavior, his work now
+                bridges deep inner transformation with practical tools for real-life change. Alex
+                guides others to break free from old patterns, reconnect with their authentic
+                selves, and live in alignment with purpose, presence, and truth.
               </p>
             </div>
 
@@ -332,21 +300,22 @@ agency to one of the world&apos;s largest global marketing groups, Alex shifted 
                 </div>
               </div>
               <p className="text-center max-w-2xl mx-auto leading-relaxed">
-              After years of performing on screen and stage, creating festivals, and bringing people together through art and story, Yonko discovered that the greatest performance is
-              the one we live every day - when we embody our truth.
+                After years of performing on screen and stage, creating festivals, and bringing
+                people together through art and story, Yonko discovered that the greatest
+                performance is the one we live every day - when we embody our truth.
               </p>
               <p className="text-center max-w-2xl mx-auto  leading-relaxed mt-5">
-              His work bridges creativity, consciousness, and science - guiding others to awaken their inner power, expand awareness, and remember who they truly are. Through movement, breath, and presence, Yonko helps people align body, mind, and energy- shifting from survival to creation.
+                His work bridges creativity, consciousness, and science - guiding others to awaken
+                their inner power, expand awareness, and remember who they truly are. Through
+                movement, breath, and presence, Yonko helps people align body, mind, and energy-
+                shifting from survival to creation.
               </p>
             </div>
           </div>
         </section>
 
         {/* Event Details Section */}
-        <section
-          id="details"
-          className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20"
-        >
+        <section id="details" className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20">
           <h2 className="mb-8 text-3xl font-bold text-center">
             Even<span className="bg-[#9a23df] px-0.5 rounded-lg text-white">t D</span>etails
           </h2>
@@ -356,7 +325,7 @@ agency to one of the world&apos;s largest global marketing groups, Alex shifted 
               <div className="font-semibold">Toplocentrala</div>
             </div>
             <div className="rounded bg-white p-4 text-[#1a1a1a]">
-              <CalendarIcon className="mb-2 h-8 w-8" />
+              <CalendarIcon className="mb-2 h-8 w-8" />.
               <div className="font-semibold text-2xl">7.12.25</div>
             </div>
             <div className="rounded bg-black p-4 text-[#d7df23]">
@@ -384,16 +353,12 @@ agency to one of the world&apos;s largest global marketing groups, Alex shifted 
         </section>
 
         {/* Registration Form Section */}
-        <section
-          id="registration"
-          className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20"
-        >
+        <section id="registration" className="bg-[#1a1a1a] px-6 py-16 scroll-mt-20">
           <h2 className="mb-6 text-3xl font-bold text-center">
             Registr<span className="bg-[#9a23df] rounded-lg px-0.5 text-white">atio</span>n Form
           </h2>
           <p className="mb-8 text-center text-lg">
-            Limited to 45 participants - only <strong>15</strong> free seats
-            remaining!
+            Limited to 45 participants - only <strong>15</strong> free seats remaining!
           </p>
           <form className="mx-auto max-w-2xl space-y-6">
             <input
@@ -438,23 +403,14 @@ agency to one of the world&apos;s largest global marketing groups, Alex shifted 
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]"
-                />
-                <span className="text-sm leading-relaxed">
-                  I read the T&C & Privacy Policy
-                </span>
+                <input type="checkbox" className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]" />
+                <span className="text-sm leading-relaxed">I read the T&C & Privacy Policy</span>
               </div>
               <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]"
-                />
+                <input type="checkbox" className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]" />
                 <span className="text-sm leading-relaxed">
-                  I agree to receive updates, news, information and
-                  inspirational content from Outside the Box. I understand I can
-                  unsubscribe at anytime.
+                  I agree to receive updates, news, information and inspirational content from
+                  Outside the Box. I understand I can unsubscribe at anytime.
                 </span>
               </div>
             </div>
@@ -512,9 +468,7 @@ agency to one of the world&apos;s largest global marketing groups, Alex shifted 
               Privacy Policy
             </a>
           </div>
-          <p className="text-center text-sm text-gray-400">
-            © 2023. All rights reserved.
-          </p>
+          <p className="text-center text-sm text-gray-400">© 2023. All rights reserved.</p>
         </footer>
       </main>
     </div>

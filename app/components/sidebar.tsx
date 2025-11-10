@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  language: "en" | "bg";
+  language: 'en' | 'bg';
   onToggleLanguage: () => void;
 }
 
 const navigationItems = [
-  { id: "about", label: "About The Event" },
-  { id: "experience", label: "What You'll Experience" },
-  { id: "schedule", label: "Schedule" },
-  { id: "hosts", label: "Your Hosts" },
-  { id: "details", label: "Event Details" },
-  { id: "registration", label: "Registration Form" },
+  { id: 'about', label: 'About The Event' },
+  { id: 'experience', label: "What You'll Experience" },
+  { id: 'schedule', label: 'Schedule' },
+  { id: 'hosts', label: 'Your Hosts' },
+  { id: 'details', label: 'Event Details' },
+  { id: 'registration', label: 'Registration Form' },
 ];
 
 function scrollToSection(id: string) {
@@ -25,7 +25,7 @@ function scrollToSection(id: string) {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }
 }
@@ -34,7 +34,7 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
   function handleNavClick(id: string) {
     scrollToSection(id);
     // Close menu on mobile after navigation
-    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
       onClose();
     }
   }
@@ -42,18 +42,13 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
   return (
     <>
       {/* Overlay - only on mobile when open */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-          onClick={onClose}
-        />
-      )}
-      
+      {isOpen && <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" onClick={onClose} />}
+
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-50 h-full w-64 transform bg-[#1a1a1a] transition-transform duration-300 ease-in-out ${
           // On desktop (lg+), always visible. On mobile, toggle based on isOpen
-          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         <div className="flex h-full flex-col p-6 pt-8">
@@ -63,12 +58,7 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
             className="mb-8 self-end text-white lg:hidden"
             aria-label="Close menu"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -77,13 +67,13 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
               />
             </svg>
           </button>
-          
+
           {/* Logo on desktop */}
           <div className="mb-8 hidden flex-col lg:flex">
             <span className="text-xl font-bold text-white">OUTSIDE</span>
             <span className="text-lg font-bold text-white">THE BOX</span>
           </div>
-          
+
           <nav className="flex flex-col gap-4 mb-8">
             {navigationItems.map((item) => (
               <button
@@ -101,9 +91,9 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
             <button
               onClick={onToggleLanguage}
               className="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/20"
-              aria-label={`Switch to ${language === "en" ? "Bulgarian" : "English"}`}
+              aria-label={`Switch to ${language === 'en' ? 'Bulgarian' : 'English'}`}
             >
-              {language === "en" ? "BG" : "EN"}
+              {language === 'en' ? 'BG' : 'EN'}
             </button>
           </div>
         </div>
@@ -111,4 +101,3 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
     </>
   );
 }
-

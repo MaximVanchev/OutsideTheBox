@@ -1,0 +1,20 @@
+{
+  // Use Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Format files on save
+  "editor.formatOnSave": true,
+  // Additionally run ESLint auto-fix on save for supported languages
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // Optional: enable per-language if you only want typescript/javascript formatted
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  // Ensure Prettier uses project local config
+  "prettier.requireConfig": true,
+  // Disable built-in VS Code formatting for Markdown if desired (leave Prettier)
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
