@@ -12,6 +12,7 @@ import {
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Sidebar } from './components/sidebar';
 import { translations, Language } from './translations';
+import PrivacyPopup from './components/PrivacyPopup';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,6 +20,8 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
+  const [showPrivacyPopup, setShowPrivacyPopup] = useState(false);
+  const [privacyPopupTab, setPrivacyPopupTab] = useState<'privacy' | 'terms'>('privacy');
 
   function toggleLanguage() {
     setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
@@ -52,6 +55,15 @@ export default function Home() {
     );
   };
 
+  const openPrivacyPopup = (tab: 'privacy' | 'terms' = 'privacy') => {
+    setPrivacyPopupTab(tab);
+    setShowPrivacyPopup(true);
+  };
+
+  const closePrivacyPopup = () => {
+    setShowPrivacyPopup(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -65,6 +77,15 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#1a1a1a] text-white">
+      {/* Privacy Policy & Terms Popup */}
+      <PrivacyPopup
+        language={language}
+        onToggleLanguage={toggleLanguage}
+        isVisible={showPrivacyPopup}
+        initialTab={privacyPopupTab}
+        onClose={closePrivacyPopup}
+      />
+
       {/* Sidebar - Always visible on desktop, toggleable on mobile */}
       <Sidebar
         isOpen={isMobileMenuOpen}
@@ -571,17 +592,17 @@ export default function Home() {
             </a>
           </div>
           <div className="mb-4 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="#" className="hover:text-[#32cd32]">
+            <button onClick={() => openPrivacyPopup('terms')} className="hover:text-[#32cd32]">
               {t.footer.links.terms}
-            </a>
+            </button>
             <span>|</span>
             <a href="#" className="hover:text-[#32cd32]">
               {t.footer.links.contacts}
             </a>
             <span>|</span>
-            <a href="#" className="hover:text-[#32cd32]">
+            <button onClick={() => openPrivacyPopup('privacy')} className="hover:text-[#32cd32]">
               {t.footer.links.privacy}
-            </a>
+            </button>
           </div>
           <p className="text-center text-sm text-gray-400">{t.footer.copyright}</p>
         </footer>
