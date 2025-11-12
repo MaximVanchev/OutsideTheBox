@@ -1,20 +1,15 @@
 'use client';
 
+import Image from 'next/image';
+
+import { translations, Language } from '../translations';
+
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  language: 'en' | 'bg';
+  language: Language;
   onToggleLanguage: () => void;
 }
-
-const navigationItems = [
-  { id: 'about', label: 'About The Event' },
-  { id: 'experience', label: "What You'll Experience" },
-  { id: 'schedule', label: 'Schedule' },
-  { id: 'hosts', label: 'Your Hosts' },
-  { id: 'details', label: 'Event Details' },
-  { id: 'registration', label: 'Registration Form' },
-];
 
 function scrollToSection(id: string) {
   const element = document.getElementById(id);
@@ -31,6 +26,17 @@ function scrollToSection(id: string) {
 }
 
 export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: SidebarProps) {
+  const t = translations[language];
+
+  const navigationItems = [
+    { id: 'about', label: t.nav.about },
+    { id: 'experience', label: t.nav.experience },
+    { id: 'schedule', label: t.nav.schedule },
+    { id: 'hosts', label: t.nav.hosts },
+    { id: 'details', label: t.nav.details },
+    { id: 'registration', label: t.nav.registration },
+  ];
+
   function handleNavClick(id: string) {
     scrollToSection(id);
     // Close menu on mobile after navigation
@@ -46,16 +52,16 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 transform bg-[#1a1a1a] transition-transform duration-300 ease-in-out ${
-          // On desktop (lg+), always visible. On mobile, toggle based on isOpen
-          isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        className={`fixed top-0 left-0 z-50 h-full w-64 transform bg-white shadow-lg border-r border-gray-200 transition-transform duration-300 ease-in-out ${
+          // On both mobile and desktop, toggle based on isOpen
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex h-full flex-col p-6 pt-8">
-          {/* Close button - only visible on mobile */}
+          {/* Close button - visible on both mobile and desktop */}
           <button
             onClick={onClose}
-            className="mb-8 self-end text-white lg:hidden"
+            className="mb-8 self-end text-gray-700 hover:text-gray-900 transition-colors"
             aria-label="Close menu"
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,10 +74,15 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
             </svg>
           </button>
 
-          {/* Logo on desktop */}
-          <div className="mb-8 hidden flex-col lg:flex">
-            <span className="text-xl font-bold text-white">OUTSIDE</span>
-            <span className="text-lg font-bold text-white">THE BOX</span>
+          {/* Logo */}
+          <div className="mb-8 flex flex-col">
+            <Image
+              src="/logo_OTB.png"
+              alt="Outside The Box Logo"
+              width={120}
+              height={40}
+              priority
+            />
           </div>
 
           <nav className="flex flex-col gap-4 mb-8">
@@ -79,7 +90,7 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className="text-left text-white transition-colors hover:text-[#32cd32] py-2"
+                className="text-left text-gray-700 transition-colors hover:text-[#d7df23] py-2"
               >
                 {item.label}
               </button>
@@ -90,7 +101,7 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
           <div className="mt-auto">
             <button
               onClick={onToggleLanguage}
-              className="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/20"
+              className="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-100"
               aria-label={`Switch to ${language === 'en' ? 'Bulgarian' : 'English'}`}
             >
               {language === 'en' ? 'BG' : 'EN'}
