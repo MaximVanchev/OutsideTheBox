@@ -13,7 +13,7 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'REWIRE YOUR\nMIND.\nREDEFINE\nYOUR REALITY.',
-      subtitle: 'SATURDAY 12.12.25 @ TOPLO CENTRALA',
+      subtitle: 'SATURDAY 12.12.25 @ TOPLOCENTRALA',
       cta: 'REGISTER NOW',
     },
 
@@ -210,7 +210,7 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'ПРЕПРОГРАМИРАЙ\nУМА СИ.\nПРОМЕНИ\nРЕАЛНОСТТА СИ.',
-      subtitle: 'СЪБОТА 12.12.25 @ TOPLO CENTRALA',
+      subtitle: 'СЪБОТА 12.12.25 @ ТОПЛОЦЕНТРАЛА',
       cta: 'РЕГИСТРИРАЙ СЕ',
     },
 

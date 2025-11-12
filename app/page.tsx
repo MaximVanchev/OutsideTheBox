@@ -9,7 +9,7 @@ import {
   TagIcon,
   ChevronUpIcon,
 } from '@heroicons/react/24/outline';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Sidebar } from './components/sidebar';
 import { translations, Language } from './translations';
 
@@ -17,6 +17,8 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<Language>('en');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [marketingAccepted, setMarketingAccepted] = useState(false);
 
   function toggleLanguage() {
     setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
@@ -27,6 +29,27 @@ export default function Home() {
       top: 0,
       behavior: 'smooth',
     });
+  };
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!termsAccepted) {
+      alert(
+        language === 'en'
+          ? 'Please accept the terms and conditions to continue.'
+          : 'Моля, приемете условията, за да продължите.',
+      );
+      return;
+    }
+
+    // Form submission logic would go here
+    console.log(
+      'Form submitted with terms accepted:',
+      termsAccepted,
+      'marketing accepted:',
+      marketingAccepted,
+    );
   };
 
   useEffect(() => {
@@ -195,7 +218,7 @@ export default function Home() {
               {/* Title Block - Takes full width on mobile, spans 2 cols on md, 3 cols on lg */}
               <div className="col-span-1 md:col-span-2 lg:col-span-3 text-black bg-white rounded-lg p-6 flex flex-col justify-center text-center min-h-[200px]">
                 <h2 className="mb-4 text-3xl font-bold">
-                  {t.experience.title.split(' ').map((word, index, array) => {
+                  {t.experience.title.split(' ').map((word, index) => {
                     if (word.includes(t.experience.highlightWord)) {
                       const parts = word.split(t.experience.highlightWord);
                       return (
@@ -311,18 +334,18 @@ export default function Home() {
               return char;
             })}
           </h2>
-          {/* Grid Layout: 2x3 - Photos and Bios with titles */}
+          {/* Grid Layout: Mobile - Image then Bio, Desktop - 2x3 */}
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Alex Photo */}
-              <div className="flex flex-col items-center justify-center p-6 min-h-[350px]">
+              {/* Alex Photo - Order 1 on mobile, 1 on desktop */}
+              <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-1 md:order-1">
                 <div className="relative h-96 w-96 mb-4">
                   <Image src="/Alex.png" alt="Alex" fill className="object-cover" />
                 </div>
               </div>
 
-              {/* Alex Bio with Title */}
-              <div className=" text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px]">
+              {/* Alex Bio with Title - Order 2 on mobile, 2 on desktop */}
+              <div className="text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px] order-2 md:order-2">
                 <h3 className="text-xl font-bold mb-4 text-center">{t.hosts.alex.title}</h3>
                 <div className="space-y-4">
                   {t.hosts.alex.bio.map((paragraph, index) => (
@@ -333,8 +356,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Yonko Bio with Title */}
-              <div className=" text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px]">
+              {/* Yonko Photo - Order 3 on mobile, 4 on desktop */}
+              <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-3 md:order-4">
+                <div className="relative h-96 w-96 mb-4">
+                  <Image src="/Yonko.png" alt="Yonko" fill className="object-cover" />
+                </div>
+              </div>
+
+              {/* Yonko Bio with Title - Order 4 on mobile, 3 on desktop */}
+              <div className="text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px] order-4 md:order-3">
                 <h3 className="text-xl font-bold mb-4 text-center">{t.hosts.yonko.title}</h3>
                 <div className="space-y-4">
                   {t.hosts.yonko.bio.map((paragraph, index) => (
@@ -345,15 +375,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Yonko Photo */}
-              <div className="flex flex-col items-center justify-center p-6 min-h-[350px]">
-                <div className="relative h-96 w-96 mb-4">
-                  <Image src="/Yonko.png" alt="Yonko" fill className="object-cover" />
-                </div>
-              </div>
-
-              {/* Sariel Photo */}
-              <div className="flex flex-col items-center justify-center p-6 min-h-[350px]">
+              {/* Sariel Photo - Order 5 on mobile, 5 on desktop */}
+              <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-5 md:order-5">
                 <div className="relative h-96 w-96 mb-4">
                   <Image
                     src="/Sariel-Orenda.png"
@@ -364,8 +387,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Sariel Bio with Title */}
-              <div className="text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px]">
+              {/* Sariel Bio with Title - Order 6 on mobile, 6 on desktop */}
+              <div className="text-white rounded-lg p-6 flex flex-col justify-center min-h-[350px] order-6 md:order-6">
                 <h3 className="text-xl font-bold mb-4 text-center">{t.hosts.sariel.title}</h3>
                 <div className="space-y-4">
                   {t.hosts.sariel.bio.map((paragraph, index) => (
@@ -395,36 +418,43 @@ export default function Home() {
               return char;
             })}
           </h2>
-          <div className="mb-8 grid grid-cols-2 gap-4">
-            <div className="rounded bg-[#d7df23] p-4 text-black">
-              <MapPinIcon className="mb-2 h-8 w-8" />
-              <div className="font-semibold">{t.details.venue}</div>
+
+          {/* Desktop: Side by side layout, Mobile: Stacked */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Event Details Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded bg-[#d7df23] p-4 text-black">
+                <MapPinIcon className="mb-2 h-8 w-8" />
+                <div className="font-semibold">{t.details.venue}</div>
+              </div>
+              <div className="rounded bg-white p-4 text-[#1a1a1a]">
+                <CalendarIcon className="mb-2 h-8 w-8" />
+                <div className="font-semibold text-2xl">{t.details.date}</div>
+              </div>
+              <div className="rounded bg-black p-4 text-[#d7df23]">
+                <ClockIcon className="mb-2 h-8 w-8" />
+                <div className="font-semibold">{t.details.time}</div>
+              </div>
+              <div className="rounded bg-[#d7df23] p-4 text-black">
+                <TagIcon className="mb-2 h-8 w-8" />
+                <div className="font-semibold">{t.details.price}</div>
+              </div>
             </div>
-            <div className="rounded bg-white p-4 text-[#1a1a1a]">
-              <CalendarIcon className="mb-2 h-8 w-8" />
-              <div className="font-semibold text-2xl">{t.details.date}</div>
+
+            {/* Map */}
+            <div className="h-64 lg:h-auto w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2139.7373178956973!2d23.31431222188126!3d42.68010566911832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8516ba54b99b%3A0x899415ed6a0bed7e!2sToplocentrala%20-%20Regional%20Centre%20for%20Contemporary%20Art!5e0!3m2!1sen!2sbg!4v1762524005665!5m2!1sen!2sbg"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Toplocentrala - Regional Centre for Contemporary Art"
+                className="rounded-lg"
+              />
             </div>
-            <div className="rounded bg-black p-4 text-[#d7df23]">
-              <ClockIcon className="mb-2 h-8 w-8" />
-              <div className="font-semibold">{t.details.time}</div>
-            </div>
-            <div className="rounded bg-[#d7df23] p-4 text-black">
-              <TagIcon className="mb-2 h-8 w-8" />
-              <div className="font-semibold">{t.details.price}</div>
-            </div>
-          </div>
-          <div className="h-64 w-full overflow-hidden rounded-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2139.7373178956973!2d23.31431222188126!3d42.68010566911832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8516ba54b99b%3A0x899415ed6a0bed7e!2sToplocentrala%20-%20Regional%20Centre%20for%20Contemporary%20Art!5e0!3m2!1sen!2sbg!4v1762524005665!5m2!1sen!2sbg"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Toplocentrala - Regional Centre for Contemporary Art"
-              className="rounded-lg"
-            />
           </div>
         </section>
 
@@ -445,35 +475,64 @@ export default function Home() {
             })}
           </h2>
           <p className="mb-8 text-center text-lg">{t.registration.subtitle}</p>
-          <form className="mx-auto max-w-2xl space-y-6">
+          <form className="mx-auto max-w-2xl space-y-6" onSubmit={handleFormSubmit}>
             <input
               type="text"
               placeholder={t.registration.form.name}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
+              required
             />
             <input
               type="tel"
               placeholder={t.registration.form.phone}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
+              required
             />
             <input
               type="email"
               placeholder={t.registration.form.email}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
+              required
             />
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <input type="checkbox" className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]" />
-                <span className="text-sm leading-relaxed">{t.registration.form.terms}</span>
+                <input
+                  id="terms-checkbox"
+                  type="checkbox"
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]"
+                  checked={termsAccepted}
+                  onChange={(e) => setTermsAccepted(e.target.checked)}
+                  required
+                />
+                <label htmlFor="terms-checkbox" className="text-sm leading-relaxed cursor-pointer">
+                  {t.registration.form.terms}
+                  <span className="text-red-400 ml-1">*</span>
+                </label>
               </div>
               <div className="flex items-start gap-3">
-                <input type="checkbox" className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]" />
-                <span className="text-sm leading-relaxed">{t.registration.form.marketing}</span>
+                <input
+                  id="marketing-checkbox"
+                  type="checkbox"
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]"
+                  checked={marketingAccepted}
+                  onChange={(e) => setMarketingAccepted(e.target.checked)}
+                />
+                <label
+                  htmlFor="marketing-checkbox"
+                  className="text-sm leading-relaxed cursor-pointer"
+                >
+                  {t.registration.form.marketing}
+                </label>
               </div>
             </div>
             <button
               type="submit"
-              className="w-full rounded-lg bg-[#d7df23] px-8 py-4 font-bold text-black transition-colors hover:bg-[#28a028]"
+              className={`w-full rounded-lg px-8 py-4 font-bold transition-colors ${
+                termsAccepted
+                  ? 'bg-[#d7df23] text-black hover:bg-[#28a028]'
+                  : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+              }`}
+              disabled={!termsAccepted}
             >
               {t.registration.form.submit}
             </button>
