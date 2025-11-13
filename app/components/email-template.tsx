@@ -1,4 +1,4 @@
-'user server';
+'use server';
 
 interface EmailTemplateProps {
   firstName: string;
