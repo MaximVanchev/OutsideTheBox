@@ -75,12 +75,13 @@ export function Sidebar({ isOpen, onClose, language, onToggleLanguage }: Sidebar
           </button>
 
           {/* Logo */}
-          <div className="mb-8 flex flex-col">
+          <div className="mb-8 flex flex-col h-auto">
             <Image
               src="/logo_OTB.png"
               alt="Outside The Box Logo"
               width={120}
               height={40}
+              style={{ height: 'auto' }}
               priority
             />
           </div>
