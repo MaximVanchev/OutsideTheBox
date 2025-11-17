@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Outside The Box Events <noreply@otb-events.com>',
-      to: ['maxim.van.mv@gmail.com'],
+      to: ['alexander.georgiev@digitas.com'],
       subject: 'New Event Registration - Outside The Box',
       react: EmailTemplate(inputData),
       headers: {
