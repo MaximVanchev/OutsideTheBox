@@ -13,6 +13,8 @@ import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Sidebar } from './components/sidebar';
 import { translations, Language } from './translations';
 import PrivacyPopup from './components/PrivacyPopup';
+import { sendEmail } from '@/lib/api/email.request';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,6 +24,14 @@ export default function Home() {
   const [marketingAccepted, setMarketingAccepted] = useState(false);
   const [showPrivacyPopup, setShowPrivacyPopup] = useState(false);
   const [privacyPopupTab, setPrivacyPopupTab] = useState<'privacy' | 'terms'>('privacy');
+  // Registration form state
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const router = useRouter();
 
   function toggleLanguage() {
     setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
@@ -34,8 +44,10 @@ export default function Home() {
     });
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError(null);
+    setSubmitSuccess(false);
 
     if (!termsAccepted) {
       alert(
@@ -46,13 +58,33 @@ export default function Home() {
       return;
     }
 
-    // Form submission logic would go here
-    console.log(
-      'Form submitted with terms accepted:',
-      termsAccepted,
-      'marketing accepted:',
-      marketingAccepted,
-    );
+    // Basic front-end validation before calling sendEmail
+    if (!name || !email || !phone) {
+      setSubmitError(
+        language === 'en'
+          ? 'Please fill in all required fields.'
+          : 'Моля, попълнете всички задължителни полета.',
+      );
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await sendEmail({ name, email, phone });
+      setSubmitSuccess(true);
+      // Optionally clear form
+      setName('');
+      setEmail('');
+      setPhone('');
+      setTermsAccepted(false);
+      setMarketingAccepted(false);
+      router.push('https://buy.stripe.com/3cI7sEaPG1r9e6E1dMfIs01');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : undefined;
+      setSubmitError(language === 'en' ? 'Failed to submit registration.' : 'Неуспешно изпращане.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const openPrivacyPopup = (tab: 'privacy' | 'terms' = 'privacy') => {
@@ -500,18 +532,24 @@ export default function Home() {
             <input
               type="text"
               placeholder={t.registration.form.name}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
             />
             <input
               type="tel"
               placeholder={t.registration.form.phone}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
             />
             <input
               type="email"
               placeholder={t.registration.form.email}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
             />
@@ -546,16 +584,28 @@ export default function Home() {
                 </label>
               </div>
             </div>
+            {submitError && <div className="text-red-400 text-sm">{submitError}</div>}
+            {submitSuccess && (
+              <div className="text-green-400 text-sm">
+                {language === 'en'
+                  ? 'Registration submitted successfully!'
+                  : 'Регистрацията е изпратена успешно!'}
+              </div>
+            )}
             <button
               type="submit"
               className={`w-full rounded-lg px-8 py-4 font-bold transition-colors ${
-                termsAccepted
+                termsAccepted && !submitting
                   ? 'bg-[#d7df23] text-black hover:bg-[#28a028]'
                   : 'bg-gray-600 text-gray-400 cursor-not-allowed'
               }`}
-              disabled={!termsAccepted}
+              disabled={!termsAccepted || submitting}
             >
-              {t.registration.form.submit}
+              {submitting
+                ? language === 'en'
+                  ? 'Submitting...'
+                  : 'Изпращане...'
+                : t.registration.form.submit}
             </button>
           </form>
         </section>

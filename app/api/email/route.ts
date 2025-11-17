@@ -4,7 +4,7 @@ import { RegistrationDto } from '@/types/registration.type';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-//const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   if (request === null) {
@@ -14,19 +14,20 @@ export async function POST(request: Request) {
   try {
     const ImputData = (await request.json()) as RegistrationDto;
 
-    //const { data, error } = await resend.emails.send({
-    //  from: 'Acme <onboarding@resend.dev>',
-    //  to: ['delivered@resend.dev'],
-    //  subject: 'Hello world',
-    //  react: EmailTemplate({ firstName: 'John' }),
-    //});
-    //
-    //if (error) {
-    // return Response.json({ error }, { status: 500 });
-    //}
+    const { data, error } = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: ['maxim.van.mv@gmail.com'],
+      subject: 'New Registration from Outside The Box',
+      react: EmailTemplate(ImputData),
+    });
+
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
 
     return new NextResponse('Registration Successful', { status: HTTP_STATUS_CODES.OK });
   } catch (error) {
+    console.error('Error sending email:', error);
     return new NextResponse('Internal Server Error', {
       status: HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR,
     });
