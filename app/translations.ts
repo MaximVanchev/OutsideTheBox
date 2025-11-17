@@ -202,63 +202,10 @@ export const translations = {
       privacyTitle: 'Privacy Policy',
       termsTitle: 'Terms & Conditions',
       privacy: {
-        effective: 'Effective Date: [Insert Date]',
-        company: 'Company: AG Ventures EOOD',
-        address: 'Registered Office: 7 Enos Street, Sofia, Bulgaria',
-        uic: 'UIC: BG175335630',
-        intro:
-          'Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you register for or attend our events.',
-        sections: [
-          {
-            title: '1. Who We Are',
-            content:
-              'We are AG Ventures EOOD, the organizer of Outside the Box events. We act as the data controller for the personal information you provide to us through this website. Contact: office@ad-vertise.co.uk',
-          },
-          {
-            title: '2. What Data We Collect',
-            content:
-              'When you register for our event, we collect the following information: Full Name, Email Address, Phone Number, Payment information (processed securely via Stripe). We do not store or have access to your full payment details.',
-          },
-          {
-            title: '3. How We Use Your Data',
-            content:
-              'Your data is used for: processing your event registration, communicating important event information, sending optional updates (only with your consent), and complying with legal obligations.',
-          },
-          {
-            title: '4. Your Rights',
-            content:
-              'Under the GDPR, you have the right to: access, correct, or delete your data, withdraw consent for marketing, request a copy of your data, and file a complaint with the Bulgarian Commission for Personal Data Protection (CPDP).',
-          },
-        ],
+        fullText: `Privacy Policy\n\nEffective Date: [Insert Date]\nCompany: AG Ventures EOOD\nRegistered Office: 7 Enos Street, Sofia, Bulgaria\nUIC: BG175335630\n\nYour privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you register for or attend our events.\n\n1. Who We Are\nWe are AG Ventures EOOD, the organizer of Outside the Box events.\nWe act as the data controller for the personal information you provide to us through this website.\nContact: office@ad-vertise.co.uk\n\n2. What Data We Collect\nWhen you register for our event, we collect the following information:\n- Full Name\n- Email Address\n- Phone Number\n- Payment information (processed securely via Stripe)\nWe do not store or have access to your full payment details. All transactions are processed through Stripe's secure payment platform.\n\n3. How We Use Your Data\nYour data is used for the following purposes:\n- To process your event registration and confirm your participation.\n- To communicate important event information.\n- To send optional updates or future event information (only with your consent).\n- To comply with legal and accounting obligations.\n\n4. Legal Basis for Processing\nWe process your data under the following lawful bases:\n- Contractual necessity\n- Legitimate interest\n- Consent (for marketing communication)\n\n5. Data Retention\nWe retain your data only as long as necessary for the purposes described above.\nEvent registration data: up to 12 months after the event.\nMarketing data: until you unsubscribe or withdraw consent.\nAfter these periods, your data is securely deleted.\n\n6. Data Sharing\nWe do not sell or rent your personal data.\nWe may share limited information with:\n- Payment processor (Stripe)\n- Email or event management platforms\nAll partners are GDPR-compliant.\n\n7. Your Rights\nUnder the GDPR, you have the right to:\n- Access, correct, or delete your data.\n- Withdraw consent for marketing.\n- Request a copy of your data.\n- File a complaint with the Bulgarian Commission for Personal Data Protection (CPDP).\n\n8. Data Security\nWe implement appropriate technical and organizational measures to protect your data from unauthorized access, loss, or misuse.\n\n9. Changes to This Policy\nWe may update this Privacy Policy periodically. The latest version will always be available on our website.\n\nContact:\nAG Ventures EOOD\n7 Enos Street, Sofia, Bulgaria\nEmail: office@ad-vertise.co.uk\nUIC: BG175335630`,
       },
       terms: {
-        sections: [
-          {
-            title: '1. General Information',
-            content:
-              'This website and the sale of event tickets are operated by AG Ventures EOOD, a company registered in Bulgaria with UIC BG175335630. By purchasing a ticket or attending the event, you agree to these Terms & Conditions.',
-          },
-          {
-            title: '2. Event Details',
-            content:
-              'Event Name: Outside the Box, Date: 12 December 2025, Location: Toplocentrala, Sofia, Duration: 10:00 AM – 4:00 PM. We reserve the right to adjust the event schedule, speakers, or location if necessary.',
-          },
-          {
-            title: '3. Ticket Purchase & Payment',
-            content:
-              'Tickets are available through our online registration form. Ticket price: 199 BGN (excluding VAT). Payments are handled securely through Stripe; we do not store your payment details.',
-          },
-          {
-            title: '4. Cancellations & Refunds',
-            content:
-              'All ticket sales are final. You may transfer your ticket to another person by notifying us at least 48 hours before the event. In case of event cancellation by us, you will receive a full refund.',
-          },
-          {
-            title: '5. Liability',
-            content:
-              'Participation is at your own risk. AG Ventures EOOD shall not be held liable for any personal injury, loss, or damage arising from participation, except in cases of proven gross negligence.',
-          },
-        ],
+        fullText: `Terms & Conditions\n\n1. General Information\nThis website and the sale of event tickets are operated by AG Ventures EOOD, a company registered in Bulgaria with UIC BG175335630 and registered office at 7 Enos Street, Sofia, Bulgaria ("we", "us", "our").\nBy purchasing a ticket or attending the event, you agree to these Terms & Conditions.\n\n2. Event Details\nEvent Name: Outside the Box\nDate: 12 December 2025\nLocation: Toplocentrala, Sofia\nDuration: 10:00 AM – 4:00 PM\nWe reserve the right to adjust the event schedule, speakers, or location if necessary. Any significant changes will be communicated via the contact details you provide at registration.\n\n3. Ticket Purchase & Payment\nTickets are available for purchase through our online registration form and payment processor (Stripe).\nTicket price: 199 BGN (excluding VAT).\nYour ticket is confirmed once payment is successfully processed, and you receive a confirmation email.\nPayments are handled securely through Stripe; we do not store your credit card or payment details.\n\n4. Cancellations & Refunds\nAll ticket sales are final.\nIf you are unable to attend, you may transfer your ticket to another person by notifying us at least 48 hours before the event via email.\nIn the unlikely event of event cancellation by us, you will receive a full refund of the ticket price paid.\n\n5. Conduct & Participation\nWe aim to create a safe, respectful, and inclusive environment for all participants.\nWe reserve the right to refuse entry or remove any attendee whose behavior disrupts the event or negatively affects others, without refund.\n\n6. Media & Recording\nBy attending the event, you consent to being photographed or recorded.\nThese materials may be used for promotional purposes related to Outside the Box or AG Ventures EOOD.\nIf you do not wish to appear in such media, please inform the organizers upon arrival.\n\n7. Personal Data\nWe collect and process your personal data (such as name, email, and phone number) solely for event registration, communication, and updates.\nYour data will not be shared with third parties except for necessary service providers (e.g., payment processors).\nFor more details, please see our Privacy Policy.\n\n8. Liability\nParticipation in the event is at your own risk.\nAG Ventures EOOD and the facilitators shall not be held liable for any personal injury, loss, or damage to property arising from participation, except in cases of proven gross negligence or intentional misconduct.\n\n9. Governing Law\nThese Terms & Conditions are governed by the laws of the Republic of Bulgaria.\nAny disputes will be subject to the exclusive jurisdiction of the Bulgarian courts.\n\nContact:\nAG Ventures EOOD\n7 Enos Street, Sofia, Bulgaria\nEmail: office@ad-vertise.co.uk\nUIC: BG175335630`,
       },
     },
   },
@@ -468,63 +415,10 @@ export const translations = {
       privacyTitle: 'Политика за Поверителност',
       termsTitle: 'Общи Условия',
       privacy: {
-        effective: 'В сила от: [въведете дата]',
-        company: 'Компания: AG Ventures ЕООД',
-        address: 'Адрес: ул. "Енос" № 7, София, България',
-        uic: 'ЕИК: BG175335630',
-        intro:
-          'Вашата поверителност е важна за нас. Тази политика обяснява как събираме, използваме и защитаваме личните ви данни при регистрация и участие в нашите събития.',
-        sections: [
-          {
-            title: '1. Кой сме ние',
-            content:
-              'AG Ventures ЕООД е организатор на събитията Outside the Box и действа като администратор на лични данни. Имейл за контакт: office@ad-vertise.co.uk',
-          },
-          {
-            title: '2. Какви данни събираме',
-            content:
-              'При регистрация събираме следните данни: Име и фамилия, Имейл адрес, Телефон, Платежна информация (обработва се сигурно чрез Stripe). Ние не съхраняваме и нямаме достъп до данни от вашата банкова карта.',
-          },
-          {
-            title: '3. Как използваме вашите данни',
-            content:
-              'Данните се използват за: обработка на регистрацията и потвърждение на участието ви, изпращане на информация относно събитието, изпращане на бъдещи новини и събития (само с ваше съгласие), спазване на законови и счетоводни изисквания.',
-          },
-          {
-            title: '4. Вашите права',
-            content:
-              'Съгласно Общия регламент за защита на данните (GDPR) имате право да: достъпвате, коригирате и изтривате свои данни, оттегляте съгласие за маркетинг, подадете жалба до Комисията за защита на личните данни (КЗЛД).',
-          },
-        ],
+        fullText: `Политика за поверителност\n\nВ сила от: [въведете дата]\nКомпания: AG Ventures ЕООД\nАдрес: ул. „Енос" №7, София, България\nЕИК: BG175335630\n\nВашата поверителност е важна за нас. Тази политика обяснява как събираме, използваме и защитаваме личните ви данни при регистрация и участие в нашите събития.\n\n1. Кой сме ние\nAG Ventures ЕООД е организатор на събитията Outside the Box и действа като администратор на лични данни.\nИмейл за контакт: office@ad-vertise.co.uk\n\n2. Какви данни събираме\nПри регистрация събираме следните данни:\n- Име и фамилия\n- Имейл адрес\n- Телефон\n- Платежна информация (обработва се сигурно чрез Stripe)\nНие не съхраняваме и нямаме достъп до данните от вашата банкова карта.\n\n3. Как използваме вашите данни\n- За обработка на регистрацията и потвърждение на участието ви.\n- За изпращане на информация относно събитието.\n- За изпращане на бъдещи новини и събития (само с ваше съгласие).\n- За спазване на законови и счетоводни изисквания.\n\n4. Правно основание за обработване\n- Изпълнение на договор (регистрация за събитието).\n- Легитимен интерес (подобряване на услугите).\n- Съгласие (за маркетинг и комуникации).\n\n5. Срок за съхранение\n- Данни за регистрация: до 12 месеца след събитието.\n- Данни за маркетинг: до оттегляне на съгласието.\nСлед изтичане на сроковете данните се изтриват сигурно.\n\n6. Споделяне на данни\nНе продаваме и не предоставяме вашите данни на трети лица, освен ако това не е необходимо за изпълнение на услугата (Stripe, имейл платформи).\nВсички партньори са съвместими с GDPR.\n\n7. Вашите права\nСъгласно Общия регламент за защита на данните (GDPR) имате право да:\n- Достъпвате, коригирате и изтривате своите данни.\n- Оттегляте съгласие за маркетинг.\n- Подадете жалба до Комисията за защита на личните данни (КЗЛД).\n\n8. Сигурност на данните\nПрилагаме подходящи технически и организационни мерки за защита на личните ви данни от неоторизиран достъп, загуба или злоупотреба.\n\n9. Промени в политиката\nПолитиката може да бъде актуализирана. Последната версия винаги ще бъде достъпна на нашия уебсайт.\n\nКонтакт:\nAG Ventures ЕООД\nул. „Енос" №7, София, България\nИмейл: office@ad-vertise.co.uk\nЕИК: BG175335630`,
       },
       terms: {
-        sections: [
-          {
-            title: '1. Общи данни',
-            content:
-              'Настоящият уебсайт и продажбата на билети за събития се извършват от "Ей Джи Венчърс" ЕООД, дружество, регистрирано в България с ЕИК BG175335630. С покупката на билет или участието в събитието вие се съгласявате с настоящите Общи условия.',
-          },
-          {
-            title: '2. Детайли за събитието',
-            content:
-              'Име на събитието: Outside the Box, Дата: 12 декември 2025 г., Място: Топлоцентрала, София, Продължителност: 10:00 – 16:00 ч. Запазваме си правото да правим промени в програмата, лекторите или локацията при необходимост.',
-          },
-          {
-            title: '3. Покупка и плащане',
-            content:
-              'Билетите се закупуват чрез онлайн формата за регистрация и платежната система Stripe. Цена на билет: 199 лв. (без ДДС). Плащанията се обработват сигурно чрез Stripe. Ние не съхраняваме и нямаме достъп до данни от вашата банкова карта.',
-          },
-          {
-            title: '4. Анулиране и възстановяване',
-            content:
-              'Всички продажби са окончателни. Ако не можете да присъствате, може да прехвърлите билета си на друго лице, като ни уведомите поне 48 часа преди събитието по имейл. В случай на отмяна от наша страна, ще получите пълно възстановяване на сумата за билета.',
-          },
-          {
-            title: '5. Отговорност',
-            content:
-              'Участието в събитието е на собствен риск. AG Ventures ЕООД и водещите не носят отговорност за телесни повреди или материални щети, освен в случаи на доказана груба небрежност или умишлено действие.',
-          },
-        ],
+        fullText: `Общи условия\n\n1. Общи данни\nНастоящият уебсайт и продажбата на билети за събития се извършват от „Ей Джи Венчърс" ЕООД, дружество, регистрирано в България с ЕИК BG175335630 и адрес: ул. „Енос" №7, София, България („ние", „нас", „нашето").\nС покупката на билет или участието в събитието вие се съгласявате с настоящите Общи условия.\n\n2. Детайли за събитието\nИме на събитието: Outside the Box\nДата: 12 декември 2025 г.\nМясто: Топлоцентрала, София\nПродължителност: 10:00 – 16:00 ч.\nЗапазваме си правото да правим промени в програмата, лекторите или локацията при необходимост. Всички съществени промени ще бъдат съобщени чрез посочените от вас данни за контакт.\n\n3. Покупка и плащане\nБилетите се закупуват чрез онлайн формата за регистрация и платежната система Stripe.\nЦена на билет: 199 лв. (без ДДС).\nВашата регистрация се счита за потвърдена след успешно плащане и получаване на имейл за потвърждение.\nПлащанията се обработват сигурно чрез Stripe. Ние не съхраняваме и нямаме достъп до данни от вашата банкова карта.\n\n4. Анулиране и възстановяване\nВсички продажби са окончателни.\nАко не можете да присъствате, можете да прехвърлите билета си на друго лице, като ни уведомите поне 48 часа преди събитието по имейл.\nВ случай на отмяна от наша страна, ще получите пълно възстановяване на сумата за билета.\n\n5. Поведение и участие\nСтремим се да създадем сигурна, уважителна и приобщаваща среда за всички участници.\nЗапазваме си правото да откажем достъп или да премахнем участник, чието поведение нарушава събитието или влияе негативно на други участници, без право на възстановяване на сума.\n\n6. Фото и видео заснемане\nС участието си в събитието вие давате съгласие да бъдете заснети.\nМатериалите могат да бъдат използвани за промоционални цели, свързани със събитието Outside the Box или AG Ventures EOOD.\nАко не желаете да бъдете включени, моля уведомете организаторите при пристигане.\n\n7. Лични данни\nСъбираме и обработваме лични данни (име, имейл, телефон) единствено за целите на регистрацията, комуникацията и информирането относно събитието.\nДанните няма да бъдат споделяни с трети страни, освен ако това не е необходимо за предоставяне на услугата (напр. платежни оператори).\nЗа повече информация вижте Политиката за поверителност.\n\n8. Отговорност\nУчастието в събитието е на собствен риск.\nAG Ventures EOOD и водещите не носят отговорност за телесни повреди или материални щети, освен в случаи на доказана груба небрежност или умишлено действие.\n\n9. Приложимо право\nНастоящите Общи условия се уреждат от законите на Република България.\nВсички спорове се решават от компетентните български съдилища.\n\nКонтакт:\nAG Ventures EOOD\nул. „Енос" №7, София, България\nИмейл: office@ad-vertise.co.uk\nЕИК: BG175335630`,
       },
     },
   },

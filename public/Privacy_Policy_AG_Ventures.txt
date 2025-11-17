@@ -1,0 +1,67 @@
+Privacy Policy
+
+Effective Date: [Insert Date]
+Company: AG Ventures EOOD
+Registered Office: 7 Enos Street, Sofia, Bulgaria
+UIC: BG175335630
+
+Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you register for or attend our events.
+
+1. Who We Are
+We are AG Ventures EOOD, the organizer of Outside the Box events.
+We act as the data controller for the personal information you provide to us through this website.
+Contact: office@ad-vertise.co.uk
+
+2. What Data We Collect
+When you register for our event, we collect the following information:
+- Full Name
+- Email Address
+- Phone Number
+- Payment information (processed securely via Stripe)
+We do not store or have access to your full payment details. All transactions are processed through Stripe’s secure payment platform.
+
+3. How We Use Your Data
+Your data is used for the following purposes:
+- To process your event registration and confirm your participation.
+- To communicate important event information.
+- To send optional updates or future event information (only with your consent).
+- To comply with legal and accounting obligations.
+
+4. Legal Basis for Processing
+We process your data under the following lawful bases:
+- Contractual necessity
+- Legitimate interest
+- Consent (for marketing communication)
+
+5. Data Retention
+We retain your data only as long as necessary for the purposes described above.
+Event registration data: up to 12 months after the event.
+Marketing data: until you unsubscribe or withdraw consent.
+After these periods, your data is securely deleted.
+
+6. Data Sharing
+We do not sell or rent your personal data.
+We may share limited information with:
+- Payment processor (Stripe)
+- Email or event management platforms
+All partners are GDPR-compliant.
+
+7. Your Rights
+Under the GDPR, you have the right to:
+- Access, correct, or delete your data.
+- Withdraw consent for marketing.
+- Request a copy of your data.
+- File a complaint with the Bulgarian Commission for Personal Data Protection (CPDP).
+
+8. Data Security
+We implement appropriate technical and organizational measures to protect your data from unauthorized access, loss, or misuse.
+
+9. Changes to This Policy
+We may update this Privacy Policy periodically. The latest version will always be available on our website.
+
+Contact:
+AG Ventures EOOD
+7 Enos Street, Sofia, Bulgaria
+Email: office@ad-vertise.co.uk
+UIC: BG175335630
+

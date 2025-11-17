@@ -112,39 +112,22 @@ export default function PrivacyPopup({
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(80vh-140px)] px-6 py-6">
+        <div className="overflow-y-auto max-h-[calc(80vh-180px)] px-6 py-6">
           {activeTab === 'privacy' ? (
-            <div className="space-y-6">
-              {/* Privacy Policy Header */}
-              <div className="space-y-2">
-                <p className="text-sm text-gray-600">{t.privacy.effective}</p>
-                <p className="text-sm text-gray-600">{t.privacy.company}</p>
-                <p className="text-sm text-gray-600">{t.privacy.address}</p>
-                <p className="text-sm text-gray-600">{t.privacy.uic}</p>
-              </div>
-
-              {/* Privacy Policy Intro */}
-              <p className="text-gray-800 leading-relaxed">{t.privacy.intro}</p>
-
-              {/* Privacy Policy Sections */}
-              <div className="space-y-6">
-                {t.privacy.sections.map((section, index) => (
-                  <div key={index} className="space-y-3">
-                    <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{section.content}</p>
-                  </div>
-                ))}
+            <div className="space-y-4 pb-8">
+              <div className="prose prose-sm max-w-none">
+                <pre className="whitespace-pre-wrap font-sans text-gray-700 leading-relaxed text-sm">
+                  {t.privacy.fullText}
+                </pre>
               </div>
             </div>
           ) : (
-            <div className="space-y-6">
-              {/* Terms & Conditions Sections */}
-              {t.terms.sections.map((section, index) => (
-                <div key={index} className="space-y-3">
-                  <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{section.content}</p>
-                </div>
-              ))}
+            <div className="space-y-4 pb-8">
+              <div className="prose prose-sm max-w-none">
+                <pre className="whitespace-pre-wrap font-sans text-gray-700 leading-relaxed text-sm">
+                  {t.terms.fullText}
+                </pre>
+              </div>
             </div>
           )}
         </div>
