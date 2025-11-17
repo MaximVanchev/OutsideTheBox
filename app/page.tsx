@@ -14,7 +14,6 @@ import { Sidebar } from './components/sidebar';
 import { translations, Language } from './translations';
 import PrivacyPopup from './components/PrivacyPopup';
 import { sendEmail } from '@/lib/api/email.request';
-import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,7 +30,6 @@ export default function Home() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const router = useRouter();
 
   function toggleLanguage() {
     setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
@@ -71,6 +69,8 @@ export default function Home() {
     setSubmitting(true);
     try {
       await sendEmail({ name, email, phone });
+      // Redirect to external URL
+      window.location.href = 'https://buy.stripe.com/3cI7sEaPG1r9e6E1dMfIs01';
       setSubmitSuccess(true);
       // Optionally clear form
       setName('');
@@ -78,10 +78,11 @@ export default function Home() {
       setPhone('');
       setTermsAccepted(false);
       setMarketingAccepted(false);
-      router.push('https://buy.stripe.com/3cI7sEaPG1r9e6E1dMfIs01');
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : undefined;
-      setSubmitError(language === 'en' ? 'Failed to submit registration.' : 'Неуспешно изпращане.');
+      setSubmitError(
+        message || (language === 'en' ? 'Failed to submit registration.' : 'Неуспешно изпращане.'),
+      );
     } finally {
       setSubmitting(false);
     }
