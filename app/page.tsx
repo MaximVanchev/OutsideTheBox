@@ -224,6 +224,9 @@ export default function Home() {
               fill
               className="object-cover opacity-80 object-left sm:object-center"
               priority
+              quality={75}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
             <div className="absolute inset-0 bg-[#1a1a1a]/60" />
           </div>
@@ -393,8 +396,15 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Alex Photo - Order 1 on mobile, 1 on desktop */}
               <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-1 md:order-1">
-                <div className="relative h-96 w-96 mb-4">
-                  <Image src="/Alex.png" alt="Alex" fill className="object-cover" />
+                <div className="relative h-80 w-80 mb-4">
+                  <Image
+                    src="/Alex.png"
+                    alt="Alex"
+                    fill
+                    className="object-cover rounded-lg"
+                    loading="lazy"
+                    quality={70}
+                  />
                 </div>
               </div>
 
@@ -412,8 +422,15 @@ export default function Home() {
 
               {/* Yonko Photo - Order 3 on mobile, 4 on desktop */}
               <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-3 md:order-4">
-                <div className="relative h-96 w-96 mb-4">
-                  <Image src="/Yonko.png" alt="Yonko" fill className="object-cover" />
+                <div className="relative h-80 w-80 mb-4">
+                  <Image
+                    src="/Yonko.png"
+                    alt="Yonko"
+                    fill
+                    className="object-cover rounded-lg"
+                    loading="lazy"
+                    quality={70}
+                  />
                 </div>
               </div>
 
@@ -431,12 +448,14 @@ export default function Home() {
 
               {/* Sariel Photo - Order 5 on mobile, 5 on desktop */}
               <div className="flex flex-col items-center justify-center p-6 min-h-[350px] order-5 md:order-5">
-                <div className="relative h-96 w-96 mb-4">
+                <div className="relative h-80 w-80 mb-4">
                   <Image
                     src="/Sariel-Orenda.png"
                     alt="Sariel Orenda"
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
+                    loading="lazy"
+                    quality={70}
                   />
                 </div>
               </div>
@@ -496,7 +515,7 @@ export default function Home() {
             </div>
 
             {/* Map */}
-            <div className="h-64 lg:h-auto w-full overflow-hidden rounded-lg">
+            <div className="h-64 lg:h-auto w-full overflow-hidden rounded-lg bg-gray-200">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2139.7373178956973!2d23.31431222188126!3d42.68010566911832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8516ba54b99b%3A0x899415ed6a0bed7e!2sToplocentrala%20-%20Regional%20Centre%20for%20Contemporary%20Art!5e0!3m2!1sen!2sbg!4v1762524005665!5m2!1sen!2sbg"
                 width="100%"

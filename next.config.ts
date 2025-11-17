@@ -2,6 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  compress: true,
   images: {
     remotePatterns: [
       {
@@ -9,12 +10,13 @@ const nextConfig: NextConfig = {
         hostname: 'creators.djfan.app',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   experimental: {
     workerThreads: false,
-    // This can sometimes help with memory issues during build
     cpus: 1,
   },
 };
-
 export default nextConfig;
