@@ -548,7 +548,11 @@ export default function Home() {
             })}
           </h2>
           <p className="mb-8 text-center text-lg">{t.registration.subtitle}</p>
-          <form className="mx-auto max-w-2xl space-y-6" onSubmit={handleFormSubmit}>
+          <form
+            className="mx-auto max-w-2xl space-y-6"
+            onSubmit={handleFormSubmit}
+            suppressHydrationWarning
+          >
             <input
               type="text"
               placeholder={t.registration.form.name}
@@ -556,6 +560,7 @@ export default function Home() {
               onChange={(e) => setName(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
+              suppressHydrationWarning
             />
             <input
               type="tel"
@@ -564,6 +569,7 @@ export default function Home() {
               onChange={(e) => setPhone(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
+              suppressHydrationWarning
             />
             <input
               type="email"
@@ -572,6 +578,7 @@ export default function Home() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded bg-[#2d2d2d] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#32cd32]"
               required
+              suppressHydrationWarning
             />
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -582,6 +589,7 @@ export default function Home() {
                   checked={termsAccepted}
                   onChange={(e) => setTermsAccepted(e.target.checked)}
                   required
+                  suppressHydrationWarning
                 />
                 <label htmlFor="terms-checkbox" className="text-sm leading-relaxed cursor-pointer">
                   {t.registration.form.terms}
@@ -595,6 +603,7 @@ export default function Home() {
                   className="mt-0.5 h-5 w-5 flex-shrink-0 accent-[#32cd32]"
                   checked={marketingAccepted}
                   onChange={(e) => setMarketingAccepted(e.target.checked)}
+                  suppressHydrationWarning
                 />
                 <label
                   htmlFor="marketing-checkbox"
