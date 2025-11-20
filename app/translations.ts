@@ -13,7 +13,7 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'REWIRE YOUR\nMIND.\nREDEFINE\nYOUR REALITY.',
-      subtitle: 'Sunday, December 7, 2025 | 10:00 – 16:00 | Toplocentrala, Sofia',
+      subtitle: 'SUNDAY 07.12.25 | 10:00 – 16:00 | TOPLOCENTRALA SOFIA',
       cta: 'REGISTER NOW',
     },
 
@@ -244,7 +244,7 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'ПРЕПРОГРАМИРАЙ\nУМА СИ.\nПРОМЕНИ\nРЕАЛНОСТТА СИ.',
-      subtitle: 'НЕДЕЛЯ 07.12.25 @ ТОПЛОЦЕНТРАЛА',
+      subtitle: 'НЕДЕЛЯ 07.12.25 | 10:00 – 16:00 | ТОПЛОЦЕНТРАЛА СОФИЯ',
       cta: 'РЕГИСТРИРАЙ СЕ',
     },
 
