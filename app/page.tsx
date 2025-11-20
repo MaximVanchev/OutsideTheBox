@@ -675,10 +675,6 @@ export default function Home() {
               {t.footer.links.terms}
             </button>
             <span>|</span>
-            <a href="#" className="hover:text-[#32cd32]">
-              {t.footer.links.contacts}
-            </a>
-            <span>|</span>
             <button onClick={() => openPrivacyPopup('privacy')} className="hover:text-[#32cd32]">
               {t.footer.links.privacy}
             </button>

@@ -13,7 +13,7 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'REWIRE YOUR\nMIND.\nREDEFINE\nYOUR REALITY.',
-      subtitle: 'SUNDAY 07.12.25 @ TOPLOCENTRALA',
+      subtitle: 'Sunday, December 7, 2025 | 10:00 – 16:00 | Toplocentrala, Sofia',
       cta: 'REGISTER NOW',
     },
 
@@ -25,7 +25,7 @@ export const translations = {
         'Feeling stuck in the same loops?',
         'Ready for real, lasting change?',
         'Join Alex & Yonko for a transformative one-day experience that blends deep inner healing with practical neuroscience - helping you break free from recurring patterns and create the life you truly want.',
-        "This isn't theory. It's real work - guided processes, emotional release, and the science of how to rewire your brain for freedom, clarity, and self-leadership.",
+        'This isn’t a motivational seminar meant to convince you that change is possible. It’s a hands-on process where you’ll understand how change actually works — through guided exercises, emotional release, and the science of rewiring your brain for freedom, clarity, and inner strength in the present moment.',
       ],
     },
 
@@ -50,7 +50,7 @@ export const translations = {
         {
           title: 'Rewire Your Brain',
           description:
-            'Use neuroplasticity to consciously reshape your thoughts, emotions, and behaviors',
+            'Apply neuroplasticity to consciously reshape thoughts, emotions, and behaviors that no longer fit who you are becoming.',
         },
         {
           title: 'Master the Present Moment',
@@ -59,7 +59,7 @@ export const translations = {
         {
           title: 'Two Guided Meditations',
           description:
-            'Reprogram your nervous system for safety, success, and expansion (30 min + 45 min)',
+            'Reprogram your nervous system for balance, confidence, and connection (30 min + 45 min).',
         },
       ],
     },
@@ -87,8 +87,12 @@ export const translations = {
         },
         {
           time: '11:30 - 12:20 | Part 2: The architecture of your reality (Yonko)',
-          description:
-            "How your thoughts, emotions, habits, and environment create the loop you're stuck in.",
+          description: [
+            '• How the brain works and why we live on autopilot',
+            '• How thoughts create chemistry that keeps the body stuck in the past',
+            '• The connection between mind, body, and reality',
+            '• Neuroplasticity and the possibility of change',
+          ],
         },
         {
           time: '12:20 - 12:50 | Break + Connection',
@@ -96,8 +100,13 @@ export const translations = {
         },
         {
           time: '12:50 - 13:40 | Breaking the Patterns (Yonko)',
-          description:
-            'Why we repeat the past, how beliefs form, and how to step out of the familiar version of you.',
+          description: [
+            '• Why we repeat the past',
+            '• How beliefs are formed',
+            '• Why only the present moment gives access to true potential',
+            '• The mind as time, consciousness as space',
+            '• Practices for observing and interrupting automatic thoughts',
+          ],
         },
         {
           time: '13:40 - 13:45 | Short Break',
@@ -105,7 +114,8 @@ export const translations = {
         },
         {
           time: '13:45 - 14:15 | Meditation 1: The Present Moment',
-          description: 'Guided practice to access the only place real change can happen: now.',
+          description:
+            'Guided meditation for awareness, breathwork, and reclaiming energy into the now.',
         },
         {
           time: '14:15 - 14:20 | Integration',
@@ -113,8 +123,12 @@ export const translations = {
         },
         {
           time: '14:20 - 15:05 | Becoming Your New Self',
-          description:
-            'Tools for catching old patterns in real time, choosing differently, and rehearsing your new identity.',
+          description: [
+            '• Recognizing old patterns in real time',
+            '• Choosing new responses',
+            '• Heart–brain coherence',
+            '• Embodying the future in the present moment',
+          ],
         },
         {
           time: '15:05 - 15:10 | Prepare for Deep Work',
@@ -122,7 +136,11 @@ export const translations = {
         },
         {
           time: '15:10 - 15:55 | MEDITATION 2: Creating Your Reality',
-          description: 'Release the old identity, embody the new one, lock in the elevated state.',
+          description: [
+            '• Releasing the old identity',
+            '• Embodying the new self',
+            '• Anchoring the new elevated state through gratitude',
+          ],
         },
         {
           time: '15:55 - 16:00 | Closing',
@@ -145,8 +163,11 @@ export const translations = {
       yonko: {
         title: 'Yonko - The Architecture of Reality',
         bio: [
-          'After years of performing on screen and stage, creating festivals, and bringing people together through art and story, Yonko discovered that the greatest performance is the one we live every day - when we embody our truth.',
-          'His work bridges creativity, consciousness, and science - guiding others to awaken their inner power, expand awareness, and remember who they truly are. Through movement, breath, and presence, Yonko helps people align body, mind, and energy- shifting from survival to creation.',
+          'After years on stage and screen, creating festivals and bringing people together through art and story, Yonko realized that the greatest performance isn’t the one on stage — it’s the one we live inside ourselves.',
+          'In his search for truth — exploring who we are, how we function, and how we build our own reality — he discovered that all methods, sciences, and philosophies ultimately point to the same thing: consciousness as the source of creation.',
+          'Today, Yonko merges art, awareness, and science to guide people through conscious transformation — from automatism to presence, from fear to trust and connection.',
+          'Through movement, breath, and focused attention, he leads participants into alignment between body, mind, and energy — beyond survival, into conscious living.',
+          '“The real stage is within us — and when you master it, every other one becomes yours.”',
         ],
       },
       sariel: {
@@ -178,9 +199,9 @@ export const translations = {
         phone: 'Phone',
         email: 'Email',
         tickets: 'No. Tickets',
-        terms: 'I read the T&C & Privacy Policy',
+        terms: 'I accept the T&C & Privacy Policy',
         marketing:
-          'I agree to receive updates, news, information and inspirational content from Outside the Box. I understand I can unsubscribe at anytime.',
+          'I agree to receive updates, news, information, and inspirational content from Outside the Box. I understand I can unsubscribe at anytime.',
         submit: 'FINALIZE YOUR ORDER',
       },
     },
@@ -189,7 +210,6 @@ export const translations = {
     footer: {
       links: {
         terms: 'Terms & Conditions',
-        contacts: 'Contacts',
         privacy: 'Privacy Policy',
       },
       copyright: '© 2023. All rights reserved.',
@@ -411,7 +431,6 @@ export const translations = {
     footer: {
       links: {
         terms: 'Общи Условия',
-        contacts: 'Контакти',
         privacy: 'Политика за Поверителност',
       },
       copyright: '© 2023. Всички права запазени.',
