@@ -30,6 +30,7 @@ export default function Home() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [showThankYouPopup, setShowThankYouPopup] = useState(false);
 
   function toggleLanguage() {
     setLanguage((prev) => (prev === 'en' ? 'bg' : 'en'));
@@ -69,10 +70,9 @@ export default function Home() {
     setSubmitting(true);
     try {
       await sendEmail({ name, email, phone });
-      // Redirect to external URL
-      window.location.href = 'https://buy.stripe.com/3cI7sEaPG1r9e6E1dMfIs01';
       setSubmitSuccess(true);
-      // Optionally clear form
+      setShowThankYouPopup(true);
+      // Clear form
       setName('');
       setEmail('');
       setPhone('');
@@ -97,6 +97,10 @@ export default function Home() {
     setShowPrivacyPopup(false);
   };
 
+  const closeThankYouPopup = () => {
+    setShowThankYouPopup(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -118,6 +122,26 @@ export default function Home() {
         initialTab={privacyPopupTab}
         onClose={closePrivacyPopup}
       />
+
+      {/* Thank You Popup */}
+      {showThankYouPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+              {t.registration.thankYou.title}
+            </h3>
+            <p className="text-gray-700 mb-6 text-center leading-relaxed">
+              {t.registration.thankYou.message}
+            </p>
+            <button
+              onClick={closeThankYouPopup}
+              className="w-full bg-[#d7df23] text-black font-bold py-3 px-4 rounded-lg hover:bg-[#c5cc1f] transition-colors"
+            >
+              {t.registration.thankYou.close}
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Sidebar - Always visible on desktop, toggleable on mobile */}
       <Sidebar

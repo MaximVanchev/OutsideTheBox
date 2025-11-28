@@ -193,7 +193,8 @@ export const translations = {
     registration: {
       title: 'Registration Form',
       highlightWord: 'atio',
-      subtitle: 'Limited to 45 participants - only 15 free seats remaining!',
+      subtitle:
+        'Fill out the form and our team will send you payment instructions and a confirmation.',
       form: {
         name: 'Name',
         phone: 'Phone',
@@ -203,6 +204,11 @@ export const translations = {
         marketing:
           'I agree to receive updates, news, information, and inspirational content from Outside the Box. I understand I can unsubscribe at anytime.',
         submit: 'FINALIZE YOUR ORDER',
+      },
+      thankYou: {
+        title: 'Thank You!',
+        message: 'Your details have been received. You will receive payment instructions shortly.',
+        close: 'Close',
       },
     },
 
@@ -414,7 +420,8 @@ export const translations = {
     registration: {
       title: 'Регистрация',
       highlightWord: 'тра',
-      subtitle: 'Ограничени места — максимум 45 участници. Остават само 15 безплатни места!',
+      subtitle:
+        'Попълнете формата и нашият екип ще ви изпрати инструкции за плащане и потвърждение.',
       form: {
         name: 'Име',
         phone: 'Телефон',
@@ -424,6 +431,11 @@ export const translations = {
         marketing:
           'Съгласен съм да получавам новини, информация за събития и вдъхновяващо съдържание от Outside the Box. Знам, че мога да се отпиша по всяко време.',
         submit: 'Финализирай регистрацията',
+      },
+      thankYou: {
+        title: 'Благодарим Ви!',
+        message: 'Данните Ви бяха получени. Скоро ще получите инструкции за плащане.',
+        close: 'Затвори',
       },
     },
 
