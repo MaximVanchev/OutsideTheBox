@@ -13,12 +13,12 @@ module.exports = {
       min_uptime: '10s',
       env: {
         NODE_ENV: 'production',
-        PORT: 8080,
+        PORT: 3000,
         RESEND_API_KEY: 're_DBEt99Zf_HR7eVV3TKbxQ2bkUfSBXR3aJ',
       },
       env_production: {
         NODE_ENV: 'production',
-        PORT: 8080,
+        PORT: 3000,
         RESEND_API_KEY: 're_DBEt99Zf_HR7eVV3TKbxQ2bkUfSBXR3aJ',
       },
       out_file: './logs/pm2-out.log',
