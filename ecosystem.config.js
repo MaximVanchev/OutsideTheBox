@@ -14,7 +14,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3000,
-        RESEND_API_KEY: 're_DBEt99Zf_HR7eVV3TKbxQ2bkUfSBXR3aJ',
+        RESEND_API_KEY: 'your_resend_api',
       },
       env_production: {
         NODE_ENV: 'production',
