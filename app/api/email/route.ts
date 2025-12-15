@@ -4,9 +4,8 @@ import { RegistrationDto } from '@/types/registration.type';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   if (request === null) {
     return NextResponse.json({ message: 'Bad Request' }, { status: HTTP_STATUS_CODES.BAD_REQUEST });
   }
